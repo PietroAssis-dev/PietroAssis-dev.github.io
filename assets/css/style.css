@@ -1,0 +1,14 @@
+@import 'stylesheet/header.css';
+@import 'stylesheet/footer.css';
+@import 'stylesheet/bootstrap.min.css';
+@import 'stylesheet/font/GlacialIndifference-Bold.otf';
+@import 'stylesheet/font/GlacialIndifference-Regular.otf';
+
+
+body {
+    background-color: #f2f2f2;
+}
+
+.list-text {
+    text-decoration: none;
+}

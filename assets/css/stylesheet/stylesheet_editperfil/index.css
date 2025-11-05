@@ -1,0 +1,292 @@
+/* === LAYOUT GERAL === */
+.grid-edit {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    gap: 40px;
+    height: 100vh;
+    background-color: #f9f9f9;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+/* === CARD DE PERFIL === */
+.info-perf {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.card-perfil {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 500px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.card-perfil:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.card-perfil h1 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0 0 10px;
+}
+
+/* === IMAGEM === */
+.foto-perf img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ddd;
+    transition: 0.2s;
+}
+
+.foto-perf img:hover {
+    border-color: #999;
+}
+
+/* === COLUNA DE EDIÇÃO === */
+.edit-perfil-coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: start;
+    width: 100%;
+}
+
+.edit-perfil-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 60%;
+}
+
+input {
+    border-radius: 50px !important;
+    background-color: #f2f2f2;
+    border: solid 1px #000 !important;
+    font-size: 17px !important;
+    padding: 10px 15px;
+    outline: none;
+}
+
+input:focus {
+    border: solid 1px #5c6bc0 !important;
+}
+
+.edit-perfil-infos label {
+    font-weight: bold;
+    color: #333;
+    font-family: 'glacial';
+}
+
+.edit-perfil-infos input:focus {
+    border-color: #4C53A9;
+    box-shadow: 0 0 4px rgba(76, 83, 169, 0.3);
+}
+
+/* === BOTÕES === */
+.btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn-cancel,
+.btn-save {
+    border-radius: 30px;
+    padding: 1px 60px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: 'glacial';
+    transition: 0.3s ease;
+}
+
+.btn-cancel {
+    background-color: transparent;
+    border: #4C53A9 solid 1px;
+    color: #4C53A9;
+    text-decoration: none;
+}
+
+.btn-cancel:hover {
+    border: #000 solid 1px;
+    color: #000;
+}
+
+.btn-save {
+    background-color: #4C53A9;
+    border: #4C53A9 solid 1px;
+    color: #fff;
+}
+
+.btn-save:hover {
+    background: #303894;
+}
+
+/* === MODAL === */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.modal-content h2 {
+    margin: 0;
+}
+
+.modal-content p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.modal-success h2 {
+    color: rgb(23, 0, 128);
+}
+
+.modal-error h2 {
+    color: red;
+}
+
+.modal button {
+    padding: 10px 32px;
+    border: none;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn-ok {
+    background: #4c53a9;
+    color: #fff;
+}
+
+.btn-ok:hover {
+    background: #303894;
+}
+
+.btn-close {
+    background: #ccc;
+}
+
+.btn-close:hover {
+    background: #aaa;
+}
+
+/* === RESPONSIVIDADE === */
+
+/* Tablets e laptops menores */
+@media screen and (max-width: 1000px) {
+    .grid-edit {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px;
+        height: auto;
+    }
+
+    .card-perfil {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .edit-perfil-infos {
+        max-width: 100%;
+    }
+
+    .btns {
+        justify-content: center;
+    }
+}
+
+/* Smartphones (modo retrato) */
+@media screen and (max-width: 600px) {
+    .grid-edit {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .card-perfil {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .foto-perf img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .edit-perfil-infos input {
+        font-size: 15px;
+        padding: 8px 12px;
+    }
+
+    .btn-cancel,
+    .btn-save {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px 0;
+    }
+
+    .btns {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Telas muito grandes */
+@media screen and (min-width: 1600px) {
+    .grid-edit {
+        padding: 80px 200px;
+        gap: 60px;
+    }
+
+    .card-perfil {
+        max-width: 400px;
+    }
+
+    .edit-perfil-infos {
+        max-width: 50%;
+    }
+}

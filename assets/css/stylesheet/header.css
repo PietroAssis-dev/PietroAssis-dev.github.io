@@ -1,0 +1,523 @@
+@font-face {
+  font-family: "glacial";
+  src: url("../font/GlacialIndifference-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "glacial";
+  src: url("../font/GlacialIndifference-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "libre";
+  src: url("../font/LibreBaskerville-Bold.ttf") format("truetype"),
+    url("../font/LibreBaskerville-Regular.ttf") format("truetype"),
+    url("../font/LibreBaskerville-Italic.ttf") format("truetype"),
+    url("../font/LibreBaskerville-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "wide";
+  src: url("../font/Nexus_Font.ttf") format("truetype");
+}
+
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0px 60px;
+  position: fixed;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 5px;
+  margin-left: 40px;
+  flex: 1;
+  margin-top: 22px;
+}
+
+.list-style .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 5;
+  background-color: #f2f2f2;
+  list-style: none;
+  padding: 0;
+  border-bottom: 1px solid #000;
+  margin: 0;
+}
+.submenu {
+  color: #000 !important;
+  font-weight: bold;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  background-color: #ffffff !important;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.nav-user {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.foto-perfil {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  transition: 0.2s;
+}
+
+.foto-perfil:hover {
+  border-color: #000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.foto-perfil {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.submenu a {
+  color: #000 !important;
+  transition: 0.3s ease;
+  font-size: 14px;
+}
+.submenu a:hover {
+  background-color: #142d65 !important;
+  color: #fff !important;
+}
+
+.list-style .submenu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #0a0a0a;
+  text-decoration: none;
+}
+
+.list-style .has-submenu:hover .submenu {
+  display: block;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-user {
+  display: flex;
+  gap: 30px !important;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  font-family: "glacial";
+  font-weight: bold;
+  color: #000000;
+  z-index: 1000;
+  font-size: 25px;
+}
+
+.nav-user a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #000000;
+  font-size: 25px;
+}
+
+.nav-user a:hover {
+  text-decoration: underline;
+}
+
+.list-style {
+  list-style-type: none;
+  position: relative;
+}
+
+.list-text {
+  text-decoration: none;
+  color: #2f2f2f;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "libre";
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.list-text:hover {
+  color: #3d4287;
+  transform: translateY(-2px);
+  
+}
+
+.img-logo {
+  width: 130px;
+  height: 80px;
+  cursor: pointer;
+}
+
+.btn-log,
+.btn-add {
+  padding: 1px 60px;
+  height: 32px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "glacial";
+  transition: 0.3s ease;
+}
+
+.btn-log {
+  background-color: transparent;
+  border: #4c53a9 solid 1px;
+  color: #4c53a9;
+  margin-right: 30px;
+}
+
+.btn-log:hover {
+  border: #303894 solid 1px;
+  color: #303894;
+}
+
+.btn-add {
+  background-color: #2b293d;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-add:hover {
+  background-color: #142d65;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  margin-left: 20px;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #2f2f2f;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  /* Alterado de left: 20px */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  gap: 15px;
+
+  z-index: 1000;
+  width: max-content;
+  max-width: 90vw;
+}
+
+.mobile-menu a {
+  font-size: 18px;
+  color: #2f2f2f;
+  text-decoration: none;
+}
+
+.mobile-menu a:hover {
+  color: #3d4287;
+}
+
+.btn-logout {
+  text-align: center;
+  background-color: transparent !important;
+  border: #4c53a9 solid 1px;
+  color: #4c53a9;
+  margin-right: 30px;
+}
+
+.btn-logout:hover {
+  background-color: #323881;
+}
+
+.nav-user a {
+  padding: 1px 60px;
+  height: 32px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "glacial";
+  transition: 0.3s ease;
+  border: #4c53a9 solid 1px;
+  color: #4c53a9;
+}
+
+.nav-user a:hover {
+  border: #303894 solid 1px !important;
+  background-color: #303894;
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+.mobile-user {
+  gap: 20px;
+}
+
+@media screen and (max-width: 1402px) {
+  .btn-add,
+  .btn-log {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .btn-add,
+  .btn-log {
+    font-size: 12px;
+  }
+
+  .list-text {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .btn-add,
+  .btn-log {
+    font-size: 13px;
+    margin-right: 10px;
+  }
+
+  .list-text {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .hello {
+    display: none;
+  }
+
+  .nav-menu,
+  .btn-log,
+  .btn-add {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+    position: absolute;
+    
+    right: 40px;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+
+@media screen and (max-width: 1220px) {
+  /* Esconde apenas o botão "Sair" */
+  .nav-user .btn-sair {
+    display: none;
+  }
+
+  /* Mantém a foto de perfil visível */
+  .nav-user {
+    display: flex;
+    position: absolute;
+    top:25px;
+    right: 100px;
+  }
+
+  /* Garante que a imagem fique bem alinhada */
+  .foto-perfil {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+  .btn-add,
+  .btn-log {
+    font-size: 13px;
+    margin-right: 10px;
+  }
+
+  .list-text {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1207px) {
+  .btn-add,
+  .btn-log {
+    font-size: 10px;
+    margin-right: 10px;
+  }
+
+  .list-text {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .btn-add,
+  .btn-log {
+    font-size: 10px;
+    margin-right: 10px;
+  }
+
+  .list-text {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 1137px) {
+  .btn-add,
+  .btn-log {
+    font-size: 10px;
+    margin-right: 10px;
+  }
+
+  .list-text {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .btn-add,
+  .btn-log {
+    font-size: 10px;
+    margin-right: 10px;
+  }
+
+  .list-text {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1099px) {
+}
+
+.user-info {
+  position: relative; /* ESSENCIAL para o dropdown seguir a foto */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.foto-perfil {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.foto-perfil:hover {
+  border-color: #000;
+}
+
+.dropdown-user {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  border-radius: 10px;
+
+  overflow: hidden;
+  width: 160px;
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  animation: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-user.active {
+  display: flex;
+}
+
+.dropdown-user a {
+  text-decoration: none;
+  color: #333 !important;
+  background: #fff;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+  transition: background 0.2s;
+  font-weight: bold;
+}
+
+.dropdown-user a:hover {
+  background: #142d65;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

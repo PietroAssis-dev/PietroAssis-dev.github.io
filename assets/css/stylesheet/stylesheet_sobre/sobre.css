@@ -1,0 +1,296 @@
+* {
+  font-family: "glacial";
+}
+
+/* Títulos e textos principais */
+h1 {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
+
+/* ----- Seção tatu ----- */
+.info-tatu {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin-top: 2.5rem;
+}
+
+.left-tatu {
+  margin-left: 5rem;
+}
+
+.column-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.img-kamile1,
+.img-kamile2 {
+  width: 22.5rem;
+  height: 25.6rem;
+  border-radius: 10px;
+}
+
+.img-kamile3 {
+  width: 26.3rem;
+  height: 52.25rem;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ----- Cabeçalho ----- */
+.cabecalho {
+  margin-left: 7.5rem;
+}
+
+.cabecalho h1 {
+  text-align: left;
+  font-size: clamp(2.5rem, 6vw, 6.25rem); /* de 40px até 100px */
+  font-weight: bold;
+}
+
+.cabecalho p {
+
+  margin: 0;
+  text-indent: 5rem;
+  text-align: left;
+  font-size: clamp(1.25rem, 3vw, 2.625rem); /* de 20px até 42px */
+     margin-right:20px;
+}
+
+/* ----- Estúdio ----- */
+.container-estudio {
+  background-color: #000;
+  max-width: 100%;
+  height: 1334px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.estudio {
+  color: #fff;
+  margin-top: 8rem;
+  margin-left: 3.75rem;
+}
+
+.conhecendo {
+  font-size: clamp(2.5rem, 6vw, 6.25rem); /* 40px - 100px */
+  font-weight: bold;
+  text-align: left;
+}
+
+.paragraph {
+  font-size: clamp(1.25rem, 3vw, 2.625rem); /* 20px - 42px */
+  text-align: left;
+  text-indent: 5rem;
+}
+
+/* ----- Imagens do estúdio ----- */
+.imgs-estudio {
+  margin-top: 8rem;
+  margin-left: 1.875rem;
+}
+
+.estudio1 {
+  width: 25.75rem;
+  height: 40rem;
+  margin-top: 2.2rem;
+}
+
+.estudio2 {
+  width: 25.75rem;
+  height: 26.6rem;
+  margin-bottom: 11.25rem;
+  margin-left: 1.5rem;
+}
+
+.estudio3 {
+  margin-top: 2.2rem;
+  width: 54.7rem;
+  height: 24.9rem;
+}
+
+/* Responsividade extra */
+@media screen and (max-width: 10000px) {
+  .estudio4 {
+    display: none;
+  }
+}
+@media screen and (max-width: 1682px) {
+  .column-flex {
+    display: none;
+  }
+
+  .cabecalho h1 {
+    text-align: left;
+    font-size: clamp(2.5rem, 5vw, 6.25rem); /* de 40px até 100px */
+    font-weight: bold;
+  }
+
+  .cabecalho p {
+    margin: 0;
+    text-indent: 5rem;
+    text-align: left;
+    font-size: clamp(1.1rem, 3vw, 2.3rem); /* de 20px até 42px */
+  }
+  .estudio1 {
+    width: 20.75rem;
+    height: 30rem;
+    margin-top: 2.2rem;
+  }
+  .estudio2 {
+    width: 20.75rem;
+    height: 20rem;
+    margin-bottom: 8rem;
+    margin-left: 1.5rem;
+  }
+  .estudio3 {
+    margin-top: 2.2rem;
+    width: 40.7rem;
+    height: 18.9rem;
+  }
+}
+@media screen and (max-width: 1460px) {
+  .column-flex {
+    display: none;
+  }
+  .estudio1 {
+    width: 15.9rem;
+    height: 26rem;
+    margin-top: 2.2rem;
+  }
+  .estudio2 {
+    width: 15.9rem;
+    height: 19rem;
+    margin-bottom: 5rem;
+    margin-left: 1.5rem;
+  }
+  .estudio3 {
+    margin-top: 2.2rem;
+    width: 40.7rem;
+    height: 18.9rem;
+  }
+}
+@media screen and (max-width: 1330px) {
+  .column-flex {
+    display: none;
+  }
+}
+@media screen and (max-width: 1276px) {
+  .column-flex {
+    display: none;
+  }
+  .conhecendo {
+    font-size: clamp(2.5rem, 5vw, 5rem) !important;
+  }
+  .paragraph {
+    font-size: clamp(1.25rem, 2.7vw, 2.625rem);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .estudio {
+    margin-left: 0;
+  }
+
+  .estudio1,
+  .estudio2,
+  .estudio3 {
+    display: none;
+  }
+
+  .container-estudio {
+    display: flex;  
+    flex-direction: column  ;             /* usa flex para centralizar */
+    justify-content: center;     /* centraliza horizontalmente */
+    align-items: center;         /* centraliza verticalmente */
+    height: auto;                /* mantém altura natural */
+    padding: 4rem 0;             /* adiciona espaço em cima e embaixo */
+  }
+
+  .estudio4 {
+    display: block;
+    margin: 0 auto;              /* centraliza horizontalmente */
+    width: auto;                 /* mantém tamanho original da imagem */
+    height: auto;                /* evita deformar */
+    max-width: 90%;              /* impede de ultrapassar a tela */
+  }
+
+  .none,
+  .imgs-estudio {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .cabecalho h1 {
+    text-align: left;
+    font-size: clamp(2.5rem, 4vw, 6.25rem); /* de 40px até 100px */
+    font-weight: bold;
+
+  }
+
+  .cabecalho p {
+    margin: 0;
+    text-indent: 5rem;
+    text-align: left;
+    font-size: clamp(1.1rem, 2.7vw, 2.3rem); /* de 20px até 42px */
+  }
+}
+@media screen and (max-width: 912px) {
+  .none {
+    display: none;
+  }
+
+  .right-tatu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .cabecalho {
+    text-align: left;
+    margin: 0;
+    margin-right: 30px;
+  }
+
+  .info-tatu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-tatu {
+    margin-left: 0;
+  }
+
+  .img-kamile3 {
+    width: 80%;
+    height: auto;
+  }
+
+  .cabecalho h1 {
+    text-align: center;
+  }
+
+  .cabecalho p {
+    text-indent: 2rem;
+    text-align: justify;
+  }
+
+  .container-estudio {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .imgs-estudio {
+    margin: 2rem auto;
+  }
+}
